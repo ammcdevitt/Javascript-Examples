@@ -1,0 +1,1 @@
+grabs everything that's in the array and dumps it into any element that contains the id 'colors'. in this case, its just the <p> tag//
