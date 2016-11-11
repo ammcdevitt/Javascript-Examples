@@ -1,0 +1,42 @@
+<!--using JS arrays and functions to add onto an existing array based upon user inputs-->
+
+<!doctype html>
+<html>
+
+<style>
+	button {
+		font-size:300%;
+	}
+</style>
+
+<body onload="allColors()">
+  	
+<!--clicking on 'Add a Color' button will prompt a window and user enters a color-->
+<button onclick="addColor()">Add a Color</button>
+
+<!--no value in 'colors' actually in the HTML script - all being added by JS function-->
+<p id="colors"></p>
+
+
+<script>
+	//declares empty array (meaning it has no elements) called 'colorsArray'//
+	var colorsArray = [""];
+
+	//HTML onload event calls 'allColors' function and grabs everything that's in the array and dumps it into any element that contains the id 'colors'. in this case, its just the <p> tag//
+	function allColors(){
+	   document.getElementById('colors').innerHTML = colorsArray;
+	}
+
+	//'addColor' function is executed when user clicks on button 'Add a Color', the input is added to the END of the existing elements in the 'colorsArray' array. therefore, we create a new function called 'addColor'.//
+	function addColor() {
+	  //grabs the color that the user inputs into the prompt (that asks the user to add a color) and dumps it onto the END of the 'colorsArray'//
+	  colorsArray[colorsArray.length] = prompt('Enter a color, any color!');
+	  //AGAIN, grabs everything that's in the array and dumps it into any element that contains the id 'colors'. in this case, its just the <p> tag
+	  document.getElementById('colors').innerHTML = colorsArray;
+	}
+
+</script>
+
+</body>
+
+</html>
