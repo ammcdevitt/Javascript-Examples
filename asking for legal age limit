@@ -1,0 +1,31 @@
+<!--site requesting legal age to drink-->
+
+<!doctype html>
+
+<html>
+
+<body>
+
+<button onclick="ageCheck()">Enter Website</button>
+
+<p id="age"></p>
+
+<script>
+
+function ageCheck() {
+	var response = prompt("What's your age?");
+	var age = parseInt(response);
+	//if age is younger than 21, return "too young to enter site"
+	if (age < 21) {
+	    document.getElementById("age").innerHTML = "Sorry, you are too young to enter site."; 	
+	} 
+	//otherwise (else), return "enjoy site!"
+	else {
+	    document.getElementById("age").innerHTML = "Enjoy the site!";
+	}
+}
+</script>
+
+</body>
+
+</html>
