@@ -4,7 +4,7 @@
 //"Hi, I am" + " " + name. Call nameString() by passing it your name, and use console.log to print the output
 var firstName = function (name) {	
 	return "Hi, I am" + " " + name;
-	firstName"Anna");
+	firstName("Anna");
 };
 
 console.log(firstName("Anna"));
