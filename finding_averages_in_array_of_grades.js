@@ -8,7 +8,8 @@ for (index = 0; index < grades.length; index++) {
 
 document.write(sum/grades.length);
 
-//example 2: finding average if there are no elements in array. important because you never want to divide by 0 in computer science. the answer results in 'NaN'
+//example 2: finding average if there are no elements in array
+//you never want to divide by 0 in computer science
 var grades= [];
 
 var sum = 0;
