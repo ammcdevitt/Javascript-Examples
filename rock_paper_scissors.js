@@ -27,8 +27,8 @@ else {
     //if computerChoice is between 0.67 and 1, make computerChoice equal to 'scissors'
 }
 
-//declare function called compare that takes two parameters, choice1 and choice2. inside the function, write an if statement
 var compare = function(choice1, choice2) {
+    //declare function called compare that takes two parameters, choice1 and choice2. inside the function, write an if statement
     if (choice1 === choice2) {
         return "The result is a tie!";
     }
