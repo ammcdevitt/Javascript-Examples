@@ -14,15 +14,15 @@ var grades= [];
 
 var sum = 0;
 if (grades.length > 0){
-  for (index = 0; index < grades.length; index++){
+	for (index = 0; index < grades.length; index++){
   	//before finding the average, computer checks length of array to make sure that it's greater than 0
 		sum += grades[index];
-  }
-  
-  document.write(sum/grades.length);
+	}  
+  	document.write(sum/grades.length);
 }
-else
-  document.write("Empty Array");
+else {
+	document.write("Empty Array");
+}
 //just prints out empty array if there are no elements in array
 
 //example 3: array average with undefined (empty) elements
@@ -32,15 +32,15 @@ var count = 0;
 //declaring count allows the sum to be divided by ONLY the correct numbers (5), instead of the length of the array (8)
 
 if (grades.length > 0){
-  for (index = 0; index < grades.length; index++){
-    if (grades[index] != undefined){
-		  sum += grades[index];
-	//only want to do this if the index has been defined. if its undefined, then skip. undefined is a keyword in JS 
-    	  count = count + 1;
-    }
-  }
-  //Do we really want to divide by the size of the array?
-  document.write(sum/count);
+	for (index = 0; index < grades.length; index++){
+		if (grades[index] != undefined){
+			sum += grades[index];
+			//only want to do this if the index has been defined. if its undefined, then skip. undefined is a keyword in JS 
+		count += 1;
+		}
+	}
+	document.write(sum/count);
+	//don't want to divide by size of the array, so we divide by the count
 }
 else
-  document.write("Empty Array");
+	document.write("Empty Array");
