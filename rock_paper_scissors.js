@@ -4,7 +4,7 @@
 
 var userChoice = function() {
     userChoice = prompt("Do you choose rock, paper or scissors?");
-    //ask sthe user which option they want to pick. will later use this choice in the compare function to dertermine the winner
+    //asks user which option they want to pick. will later use this choice in the compare function to dertermine winner
 }
 
 var computerChoice = Math.random(); {
@@ -13,17 +13,18 @@ var computerChoice = Math.random(); {
 
 //since computerChoice now equals a randon number between 0 and 1, we need to translate this randon number into a randome choice of rock, paper, or scissors.
 
-//if computerChoice is between 0 and 0.33, make computerChoice equal to 'rock'
 if (computerChoice <= 0.33) {
     computerChoice = 'rock';
+    //if computerChoice is between 0 and 0.33, make computerChoice equal to 'rock'
 }
-//if computerChoice is between 0.34 and 0.66, make computerChoice equal to 'paper'
+
 else if (computerChoice >= 0.34 <= 0.66) {
     computerChoice = 'paper';
+    //if computerChoice is between 0.34 and 0.66, make computerChoice equal to 'paper'
 }
-//if computerChoice is between 0.67 and 1, make computerChoice equal to 'scissors'
 else {
     computerChoice = 'scissors';
+    //if computerChoice is between 0.67 and 1, make computerChoice equal to 'scissors'
 }
 
 //declare function called compare that takes two parameters, choice1 and choice2. inside the function, write an if statement
@@ -31,40 +32,37 @@ var compare = function(choice1, choice2) {
     if (choice1 === choice2) {
         return "The result is a tie!";
     }
-
-    //if choice1 is rock, then...
     else if (choice1 === 'rock') {
-        //...a) if choice2 is scissiors, then rock wins over scissors
+        //if choice1 is rock, then...
         if (choice2 === 'scissors') {
+        //...a) if choice2 is scissiors, then rock wins over scissors
             return 'rock wins';
         }
-        //the only scenario that is left is (if choice 1 is rock and) if choice2 is paper. therefore, paper wins over rock.
         else {
             return 'paper wins';
+            //the only scenario that is left is (if choice 1 is rock and) if choice2 is paper. therefore, paper wins over rock.
         }
     }
-
-    //if choice1 is paper, then...
     else if (choice1 === 'paper') {
-       //...if choice2 is rock, then paper wins over rock
+    //if choice1 is paper, then...
        if (choice2 === 'rock') {
             return 'paper wins';
+            //...if choice2 is rock, then paper wins over rock
         }
-        //the only scenario left (if (choice1 is paper and) if choice2 is scissors. therefore, scissors wins over paper.
         else {
             return 'scissors win';
+            //the only scenario left (if (choice1 is paper and) if choice2 is scissors. therefore, scissors wins over paper.
         }
     }
-
-    //if choice 1 is scissors, then...
     else if (choice1 === 'scissors') {
-        //...if choice2 is rock, then rock wins over scissors
-        if (chice2 === 'rock') {
+        //if choice 1 is scissors, then...
+        if (choice2 === 'rock') {
             return 'rock wins';
+            //...if choice2 is rock, then rock wins over scissors
         }
-        //the only scenario left (if choice1 is paper and) if choice2 is rock. therefore, scissors wins over paper.
         else {
             return 'scissors wins';
+            //the only scenario left (if choice1 is paper and) if choice2 is rock. therefore, scissors wins over paper.
         }
     } 
 }
