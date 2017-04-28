@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset=utf-8 /> 
 		<title>JavaScript Date/Time Display</title>
 		<style>
 		p {display:inline;}
@@ -15,11 +14,9 @@
 	<p id='amorpm'></p> <p>:</p>
 	<p id='minutes'></p> <p>:</p>
 	<p id='seconds'></p> 
-
-<!--sample output:
-Today is : Friday. 
-Current time is : 4 PM : 50 : 22
--->
+	<!--sample output:
+	Today is : Friday. 
+	Current time is : 4 PM : 50 : 22-->
 
 <script>
 
@@ -33,10 +30,8 @@ var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'S
 //DISPLAY TIME
 var hours = new Date().getHours();
 var ampm = (hours >= 12) ? "PM" : "AM";
-//defining hours and am/pm
-//for am or pm, use conditional ternary operator 
-//syntax: condition ? expr1 : expr2
-//takes 3 operands. returns expr1 if cond is true; otherwise, returns expr2
+//defining hours and am/pm using conditional ternary operator (condition ? expr1 : expr2), which takes 3 operands
+//returns expr1 if cond is true; otherwise, returns expr2
 
 //updates hours, am/pm, minutes, seconds
 document.getElementById('hour').innerHTML = hours;
