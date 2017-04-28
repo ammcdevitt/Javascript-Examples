@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Display Current Date in JavaScript</title>
+		<style>
+		p {display:inline;}
+		/*removes space between p tags*/
+		</style>
+	</head>
+<body>
+
+<p>Today's Date:</p>
+<p id='monthhyphen'></p>-
+<p id='dayhyphen'></p>-
+<p id='yearhyphen'></p>
+<br>
+<!--format : mm-dd-yyyy-->
+
+<p>Today's Date:</p>
+<p id='monthslash'></p>/
+<p id='dayslash'></p>/
+<p id='yearslash'></p>
+<!--format : mm/dd/yyyy-->
+
+<script>
+//have to define different d, m, y bc it JS will otherwise only update the FIRST instance it sees in the HTML
+
+//instantiate new m, d, y date objects with new Date()
+//then add appropriate method for d, m, y
+var month = new Date().getMonth() + 1;
+//must add 1, bc Jan starts at month 0
+var day = new Date().getDate();
+var year = new Date().getFullYear();
+//must use fullyear, instead of year; otherwise, will get the current year minus 1900
+
+//for day and month, add a 0 if less than 2
+//switches to string, then concatenate 0 & day/month number
+if(month.toString().length <= 1) {
+    month = '0' + month;}
+if(day.toString().length <= 1) {
+    day = '0' + day;}
+
+//for date with hyphens
+document.getElementById('dayhyphen').innerHTML = day;
+document.getElementById('monthhyphen').innerHTML = month;
+document.getElementById('yearhyphen').innerHTML = year;
+
+//for date with slashes
+document.getElementById('dayslash').innerHTML = day;
+document.getElementById('monthslash').innerHTML = month;
+document.getElementById('yearslash').innerHTML = year;
+
+</script>
+
+</body>
+</html>
