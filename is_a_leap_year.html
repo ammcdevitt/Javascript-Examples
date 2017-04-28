@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Is the Inputted Year a Leap Year?</title>
+	<!--leap years have 366 days in them-->
+</head>
+
+<body>
+
+<p>Enter a Year below:</p>
+
+<input type="number" id="yearInput">
+<!--'number' type defines a numeric input field-->
+
+<button onclick="isLeapYr()">Is it a Leap Year?</button>
+
+<p id="printYear"></p>
+
+<script>
+function isLeapYr() {
+    var year = document.getElementById("yearInput").value;
+    //'.value' grabs year that user types in
+    document.getElementById("printYear").innerHTML = (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0);
+    //is a leap year if:
+	// (1)
+	// year % 4 == 0 
+	// AND (&&) 
+	// year % 100 != 0
+
+	// OR (||)
+
+	// (2)
+	// year % 400 == 0
+}
+
+</script>
+
+</body>
+</html>
