@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html>
+
+<head>
+	<title>Multiply 2 Numbers</title>	
+</head>
+
+<body>
+
+<input type="number" id="number1">
+<p>*</p>
+<input type="number" id="number2">
+
+<button onclick="multiply()">Multiply!</button>
+
+<p id="displayAnswer"></p>
+
+<script>
+function multiply() {
+	//grab values of entered numbers
+	document.getElementById("displayAnswer").innerHTML = (document.getElementById("number1").value) * (document.getElementById("number2").value);
+}
+</script>
+</body>
+
+</html>
