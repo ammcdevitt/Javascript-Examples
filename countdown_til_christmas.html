@@ -16,7 +16,7 @@ currentDate = new Date();
 xmasDateMS = xmasDate.getTime();
 currentDateMS = currentDate.getTime();
 oneDayMS = 86400000;
-//calculates ms in a 24-hr day by multiplying hours * min * sec * ms, or 24 * 60 * 60 * 1000 
+//calculates ms in a 24-hr day. hours * min * sec * ms, or 24 * 60 * 60 * 1000 
 
 xmasCountdown = Math.floor((xmasDateMS - currentDateMS)/(oneDayMS));
 //(!) subtract difference btwn Christmas date and today's date (now in ms), which returns difference in ms with ~11 digits
@@ -26,7 +26,5 @@ xmasCountdown = Math.floor((xmasDateMS - currentDateMS)/(oneDayMS));
 window.document.write(xmasCountdown + " days til Christmas!");
 
 </script>
-
 </body>
-
 </html>
