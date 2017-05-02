@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+	<title> Guess a Number! </title>
+</head>
+
+<body>
+<script>
+
+var computerNumber = Math.floor(Math.random()*10)+1;
+	//Math.randon returns float btwn 0 and 1
+	//Multiply by 10, so that func now returns a FLOAT btwn 0.0 AND 10.0
+	//Add 1, so that func now returns a FLOAT btwen 1.0 AND 10.0
+	//Pass in Math.floor, so that func rounds downs float, so it's returned as an INT btwn 1 AND 10 
+var userInput = prompt("Guess a Number netween 1 and 10");
+var userNumber = parseInt(userInput);
+if (computerNumber == userNumber) {
+	alert("Good Work!");
+}
+else {
+	alert("Not Matched");
+}
+
+</script>
+</body>
+</html>
