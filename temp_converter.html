@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<title>Temperature Converter</title>
+</head>
+<body>
+
+<p>Enter Celsius Temperature:</p>
+<input type ="number" id="cel">
+<button onclick="toFahrenheit()">Convert to Fahrenheit</button>
+
+<p>OR</p>
+
+<p>Enter Fahrenheit Temperature:</p>
+<input type="number" id="fahren">
+<button onclick="toCelsius()">Convert to Celsius</button>
+
+<p id="convertTemp"></p>
+
+<script>
+//Water BOILS at: 	 	100 deg C 				212 deg F
+//					  -						  - 					   
+//Water FREEZES at: 	0 deg C 				32 deg F
+//						----------				----------
+//						100 degs C				180 degs F
+
+//Each 1 deg on C scale = 180/100 = each 9/5 deg on F scale
+
+function toFahrenheit(){
+	var celsius = document.getElementById("cel");
+	document.getElementById("convertTemp").innerHTML = celsius.value * 1.8 + 32;
+	//F = C * 9/5 + 32 = C * 1.8 + 32
+	//32 F = 0 C
+}
+function toCelsius(){
+	var fahrenheit = document.getElementById("fahren");
+	document.getElementById("convertTemp").innerHTML = (fahrenheit.value - 32) / 1.8;
+	//C = (F - 32) / (9/5) = (F - 32) / 1.8
+	//0 C = 32 F
+}
+
+</script>
+</body>
+</html>
