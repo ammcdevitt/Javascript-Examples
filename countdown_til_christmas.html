@@ -12,15 +12,15 @@
 xmasDate = new Date(2017, 11, 31);
 currentDate = new Date();
 
-//use getTime() to covert all dates in ms
+//use getTime() to covert all dates in milliseconds
 xmasDateMS = xmasDate.getTime();
 currentDateMS = currentDate.getTime();
 oneDayMS = 86400000;
-//calculates ms in a 24-hr day. hours * min * sec * ms, or 24 * 60 * 60 * 1000 
+//milliseconds in a 24-hr day. hours * min * sec * ms, or 24 * 60 * 60 * 1000 
 
 xmasCountdown = Math.floor((xmasDateMS - currentDateMS)/(oneDayMS));
-//1. subtract difference btwn Christmas date and today's date (now in ms), which returns difference in ms with ~11 digits
-//2. divide by total ms in a day in order to get the number of DAYs not number of ms, which returns float with ~16 digits
+//1. subtract difference btwn Christmas date and today's date (now in milliseconds), which returns difference in ms with ~11 digits
+//2. divide by total milliseconds in a day in order to get the number of DAYs not number of ms, which returns float with ~16 digits
 //3. use floor to round the day down, so that we get an int back, eliminating all digits after the decimal
 
 window.document.write(xmasCountdown + " days til Christmas!");
