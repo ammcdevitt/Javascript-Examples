@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html>
+
+<head>
+	<title>Multiply or Divide 2 Numbers</title>	
+</head>
+
+<body>
+
+<p>Enter a number</p>
+<input type="number" id="number1">
+<p>Enter another number</p>
+<input type="number" id="number2">
+<br>
+<button onclick="multiply()">Multiply</button>
+<button onclick="divide()">Divide</button>
+
+<p id="displayAnswer"></p>
+
+<script>
+
+//grabs inputs given by user
+num1 = document.getElementById("number1");
+num2 = document.getElementById("number2");
+
+function multiply() {
+	//grab values of entered numbers and multiply them
+	document.getElementById("displayAnswer").innerHTML = num1.value * num2.value;
+}
+function divide() {
+	//grab values of entered numbers and divide them
+	document.getElementById("displayAnswer").innerHTML = num1.value / num2.value;
+}
+</script>
+</body>
+
+</html>
