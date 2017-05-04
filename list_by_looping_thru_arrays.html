@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<head>
+<title>Looping through JS Arrays to Output a Bulleted List:</title>
+</head>
+
+<h1> Grocery List </h1>
+<h2 id="groceryList"></h2>
+
+<script>
+var groceries = ["Eggs", "Orange Juice", "Chicken", "Paprika", "Oatmeal", "Broccoli"];
+//declare array
+
+var text = "<ul>";
+
+for (var i = 0; i < groceries.length; i++) {
+    text += "<li>" + groceries[i] + "</li>";
+}
+
+document.getElementById("groceryList").innerHTML = text;
+</script>
+
+</body>
+</html>
