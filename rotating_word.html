@@ -6,39 +6,41 @@
 		<title>Rotating Word in JavaScript</title>
 	</head> 
 
-	<body onload= "rotate('word')">
+	<body onload= "rotate('element_id')">
 	<!--passing contents of tag with id 'word' into 'rotate' function-->
 	<!--note that the func 'rotate' is also in quotations-->
-		<p id="word">supercalifragilisticexpialidocious </p>
+		<p id="element_id">supercalifragilisticexpialidocious </p>
 	<!--add space after text so that there's a space between each rotation-->
 
 	<script>
 
-	function rotate(word) {
+	//note that we define the word in html p tag, not in the script tag
+
+	function rotate(element_id) {
 	//pass 'word' id into rotate function
 		//declare local variables
-		var textNode = document.getElementById(word).childNodes[0];
-		//childNodes returns collection of a node's child nodes, as a NodeList object. nodes in collection are sorted as they appear in source code and are accessed by index #s
+		var textNode = document.getElementById(element_id).firstChild;
+		//returns node's first child nodes, which is a NodeList object
 		var text = textNode.data;
-		//data(): jquery method that gets data from child nodes of 'word'
 
-	function move() {
-		//declare global variables
-		text = text[text.length-1] + text.substring(0, text.length-1);
-		//0. had to declare local variables 'textNode' and 'text' first, or else 'move' func won't work. must use length-1 so that 'super...' doesn't repeat itself continuously
-		//1. takes the last letter in 'super...'
-		//2. takes all the letters in 'super...'
-		//3. adds steps 1 & 2 and assigns them global (not local) text
-		textNode.data = text;
-		//using jquery, assigns the above to data method
-	}
+		function move() {
+			//declare global variables
+			text = text[text.length-1] + text.substring(0, text.length-1);
+			//0. had to declare local variables 'textNode' and 'text' first, or else 'move' func won't work. must use length-1 so that 'super...' doesn't repeat itself continuously
+			//1. takes the last letter in 'super...'
+			//2. takes all the letters in 'super...'
+			//3. adds steps 1 & 2 and assigns them global (not local) text
+			textNode.data = text;
+			//reassigns the NodeList object to textNode
+		}
 
-	setInterval(function(){
-	//setInterval method calls a function, does it in millisecs. continues until clearInterval() is called.
-		move()},
-		250);
-		//250ms=0.25sec
-	}
+		setInterval(function(){
+		//setInterval method calls a function, does it in millisecs. continues until clearInterval() is called.
+			move()},
+			250);
+			//250ms=0.25sec
+
+		}
 
 	</script>
 	</body>
