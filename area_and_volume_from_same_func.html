@@ -1,0 +1,25 @@
+<html>
+
+<head>
+<title>how to get multiple values from one function</title>
+</head>
+
+<script>
+
+function getSize(width, height, depth) {
+	var area = width * height;
+	var volume = area * depth;
+	var sizes = [area, volume];
+	return sizes
+}
+var areaSample = getSize(3,2)[0];
+//evaluates 3*2. 1st value in 'sizes' array. don't need to pass in 3rd argument, since we won't be using it
+var volumeSample = getSize(3,2,3)[1];
+//evaluates 3*2*3. 2nd value in 'sizes' array
+
+window.document.write('Area is: ' + areaSample + '. Volume is: ' + volumeSample);
+//window displays 'Area is: 6. Volume is: 18'
+
+</script>
+
+</html>
