@@ -1,47 +1,50 @@
 <html>
-<!--source: https://medium.freecodecamp.com/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb-->
-<head>
-	<title>Reverse a Number or String</title>
-</head>
+<head> <title>Reverse a Number or String</title> </head>
 
 <script>
 
-//method 1: use for loop decrementing a string
-//basic steps: (1) empty string for new reversed # to enter (2) decrement using for loop (3) place value of newly iterated index # into newly create str (4) return new str (5) pass # or str you want into func (6) print new str to window to see output
+//METHOD 1: use for loop decrementing a string
+//1. empty string for new reversed # to enter 
+//2. decrement using for loop 
+//3. place value of newly iterated index # into newly create str 
+//4. return new str 
+//5. pass # or str you want into func 
+//6. print new str to window to see output
 
 var reverseNum = "";
 //initiate new string to hold the reversed inputs
 
 function reverseIt(num){
-  for (var i = num.length - 1; i >= 0; i--) {
-		//starting point is set to one less than the length of str 'num', bc indices start at 0 (not 1). in this case, it is 8
-		//as long as i is greater or equal to 0, 
-		//decrement i after each iteration
+	for (var i = num.length - 1; i >= 0; i--) {
+	//starting point is set to one less than the length of str 'num', bc indices start at 0 (not 1). in this case, it is 8
+	//as long as i is greater or equal to 0, 
+	//decrement i after each iteration
 		reverseNum += num[i];
-		//add the index # of the element in whichever iteration of the loop. if we were to just do '+= i', then we would get the INDEX NUMBER, not the element that the index number represents
+		//add the index # of the element in whichever iteration of the loop
+		//if we were to just do 'reverseNum += i', then we would get the INDEX NUMBER, not the element that the index number represents
 	}
-	//length of '123456789' is 9. for each iteration: i = str.length - 1 and reverseNum = reverseNum + str[i]
-  //1st iteration:    i = (9 - 1) = 8,	reverseNum = "" + "9" = "9"
-  //2nd iteration:   	i = (8 - 1) = 7,  reverseNum = "9" + "8" = "98"
-  //3rd iteration:    i = (7 - 1) = 6,  reverseNum = "98" + "7" = "987"
-  //4th iteration:   	i = (6 - 1) = 5,	reverseNum = "987" + "6" = "9876"
-  //5th iteration:    i = (5 - 1) = 4,	reverseNum = "9876" + "5" = "988765"
-  //6th iteration:    i = (4 - 1) = 3,	reverseNum = "98765" + "4" = "9887654"
-  //7th iteration:  	i = (3 - 1) = 2,	reverseNum = "987654" + "3" = "98876543"
-  //8th iteration:   	i = (2 - 1) = 1,	reverseNum = "9876543" + "2" = "988765432"
-  //9th iteration:    i = (1 - 1) = 0,	reverseNum = "98765432" + "1" = "9887654321"
 	return reverseNum;
 }
+//length of '123456789' is 9
+//1st iteration:   i = (9 - 1) = 8,	reverseNum = "" + "9" = "9"
+//2nd iteration:   i = (8 - 1) = 7,  	reverseNum = "9" + "8" = "98"
+//3rd iteration:   i = (7 - 1) = 6,  	reverseNum = "98" + "7" = "987"
+//4th iteration:   i = (6 - 1) = 5,	reverseNum = "987" + "6" = "9876"
+//5th iteration:   i = (5 - 1) = 4,	reverseNum = "9876" + "5" = "988765"
+//6th iteration:   i = (4 - 1) = 3,	reverseNum = "98765" + "4" = "9887654"
+//7th iteration:   i = (3 - 1) = 2,	reverseNum = "987654" + "3" = "98876543"
+//8th iteration:   i = (2 - 1) = 1,	reverseNum = "9876543" + "2" = "988765432"
+//9th iteration:   i = (1 - 1) = 0,	reverseNum = "98765432" + "1" = "9887654321"
 reverseIt('123456789');
 window.document.write(reverseNum);
 
-//method 2: builtin methods split, reverse, and join
+//METHOD 2: builtin methods split, reverse, and join
 
 function reverseIt(word) {
 	return word = word.split("").reverse("").join("");
-  //split() method: returns array of individual elemnts in string
-  //reverse() method: reverses elements in an array
-  //join() method: joins all elements of an array into a str
+	//split() method: returns array of individual elemnts in string
+	//reverse() method: reverses elements in an array
+	//join() method: joins all elements of an array into a str
 }
 window.document.write(reverseIt("blahblahblah"));
 
