@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Adding and Removing Multiple Event Listeners</title>
+	</head>
+	<body>
+		<img id="img0" src="https://www.denverpost.com/wp-content/uploads/2018/12/MAROON_BELLS_VIEWS1_HR-1.jpg?w=536" />
+		<!--contents of div tag change when user clicks on image-->
+		<div id="status"></div>
+		<script>
+		var myImages = [
+			"https://www.denverpost.com/wp-content/uploads/2018/12/MAROON_BELLS_VIEWS1_HR-1.jpg?w=536",
+			"https://www.outtherecolorado.com/wp-content/uploads/2018/06/Maroon-Bells-Print-signed-high-filter-pass-Irwin-Badeaux-1024x684.jpg",
+			"https://heuserlaw.com/wp-content/uploads/2019/03/coloradostockphoto.jpg",
+			"https://www.gannett-cdn.com/media/USATODAY/USATODAY/2014/01/03//1388771392000-Capitol-Peak-robert-fullerton-iStock.jpg?width=2560",
+			"https://wallpaperaccess.com/full/1096483.jpg",
+			"https://lh3.googleusercontent.com/proxy/DNhmb5LgGmYwaIAOkQcjed1rQ4WcBnMZvPCSyJM5-jvGeLUjULw03kHsxU-0tUUIcIKN3eDduirzbZlVyEa_YedO7OIw7_2vaQ2JFJJLB8-tyTVenXztLnjQKrZdlzkj7XqyNg"
+		];
+			function changeImg(e) {
+				var el = e.target;
+				var newImgNumber = Math.round(Math.random() * 3);
+				while (el.src.indexOf(myImages[newImgNumber]) != -1) {
+					newImgNumber = Math.round(Math.random() * 3);
+				}
+				el.src = myImages[newImgNumber];
+			}
+			//updates text in div 
+			function updateStatus(e) {
+				var el = e.target; //reference to image (event target)
+				var status = document.getElementById("status"); //reference to div
+				status.innerHTML = "The image changed to " + el.src; //changes text of status element to image URL
+				//removes image's click event listeners if following image is displayed: (1) indexOf method on image's src determines if the image is displayed (2) if so, remove image's 2 event listeners using removeEventListener 
+				if (el.src.indexOf("https://lh3.googleusercontent.com/proxy/DNhmb5LgGmYwaIAOkQcjed1rQ4WcBnMZvPCSyJM5-jvGeLUjULw03kHsxU-0tUUIcIKN3eDduirzbZlVyEa_YedO7OIw7_2vaQ2JFJJLB8-tyTVenXztLnjQKrZdlzkj7XqyNg") > -1) {
+					el.removeEventListener("click", changeImg);
+					el.removeEventListener("click", updateStatus);
+				}
+			}
+			//set up event listeners
+			//retrieves img id=img0
+			var imgObj = document.getElementById("img0");
+			//register click event handlers by calling addEventListener
+			//when registering multiple event handlers on a single element, listening functions execute in order you registered them. in this ex, listener with changeImg registered BEFORE a listener with updateStatus so that status displayed changes AFTER image changes. if updateStatus registered BEFORE changeImg, status updates before image & displaying info would be incorrect
+			imgObj.addEventListener("click", changeImg);
+			imgObj.addEventListener("click", updateStatus);
+		</script>
+	</body>
+</html>
