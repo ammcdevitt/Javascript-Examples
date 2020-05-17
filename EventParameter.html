@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Passing Event object as parameter</title>
+		<meta name="description" content="event object contains info about event. alerts say what event is being used">
+	</head>
+	<body>
+		<!-- ondblclick attribute. event variable is NOT defined anywhere, but is an argument used only with event handlers & connected thru HTML attributes. event is a reference to the current event object when event fires -->
+		<h1 onclick="handle(event)">Heading</h1>
+		<p ondblclick="handle(event)">Paragraph 1</p>
+		<p onmouseover="handle(event)">Paragraph 2</p>
+		<script>
+			function handle(e) {
+				if (e.type == "mouseover") {
+					//type property determines what type of event occurred 
+					alert("You moved over the second paragraph using event type " + e.type);
+				} else if (e.type == "click") {
+					alert("You clicked on the heading using event type " + e.type);
+				} else if (e.type == "dblclick") {
+					alert("You double clicked on the first paragraph using event type " + e.type);
+				}
+			}
+		</script>
+	</body>
+</html>
