@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<title>change background color to random color using Events</title>
+</head>
+
+<body>
+
+<button>Change color</button>
+
+<script>
+//stores reference to button inside btn using Document.querySelector() function
+const btn = document.querySelector('button');
+
+//function returns random number
+function random(number) {
+  return Math.floor(Math.random() * (number+1));
+}
+//event handler: btn points <button> element. listens for click event by setting onclick event handler property to equal an anonymous function that generates a random RGB color and sets <body> background-color equal to it
+btn.onclick = function() {
+  const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+  document.body.style.backgroundColor = rndCol;
+}
+</script>
+
+</body>
+</html>
