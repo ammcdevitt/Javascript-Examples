@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"> 
+   <head>
+      <title>Animation with DOM Scripting</title> 
+      <meta content=“text moves from left to right, starting at left edge of viewport. when content reaches left position of 400 pixels, text switches directions & moves back toward left. animation is continuous, so it appears to bounce between 0 and 400”>
+      <style>
+         #divAdvert {
+            position: absolute; /*starting position*/
+            font: 50px Arial; 
+            top: 5px; /*5 px down from top absolute position*/
+            left: 0px; /*0px from left side of window */
+            color: turquoise;
+         } 
+      </style>
+   </head> 
+   <body>
+      <div id="divAdvert">Some text</div>
+      <script>
+         //switchDirection keeps track of direction of text. if false, text is moving from left to right (default). if true, text is moving from right to left
+         var switchDirection = false; 
+         function doAnimation() {  //doAnimation function performs animation
+            var divAdvert = document.getElementById("divAdvert");
+            var currentLeft = divAdvert.offsetLeft;  //get offsetLeft property & assign it to currentLeft variable. currentLeft checks current position
+            var newLocation;  //new left position
+            if (!switchDirection) {  //gets direction
+               newLocation = currentLeft + 2;  //moves text 2px to right
+               if (currentLeft >= 400) {  //if all the way to right,
+                  switchDirection = true;  //text moving from right to left
+               }
+            } else {
+               newLocation = currentLeft - 2;  //moves text 2px to left
+                  if (currentLeft <= 0) {  //if all text to left,
+                     switchDirection = false;  //text moving from left to right
+                  } 
+            }
+            divAdvert.style.left = newLocation + "px"; 
+         }
+         setInterval(doAnimation, 10); </script>
+   </body> 
+</html>
