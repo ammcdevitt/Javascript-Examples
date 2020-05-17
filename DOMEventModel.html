@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="description" content="Font turns red and underlines when mouse rolls over. Alert box displays location of mouse click after you click on either Paragraph 1, 2, or 3">
+		<title>Using the DOM Event Model</title>
+		<meta name="description" content="Event handler browser waits for an event, and every time that event occurs it calls the corresponding function">
+		<style>
+			.underline {
+			color: red;
+			text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<p>Paragraph 1</p>
+		<p>Paragraph 2</p>
+		<p>Paragraph 3</p>
+		<script>
+			//handles click, mouseover and mouseout events. Whenever any of the events fire, handleClick() function is raised and a new MouseEvent object is generated. MouseEvent objects give you access to Event object properties and MouseEvent object properties. function accepts MouseEvent & assigns it to reference e
+			function handleEvent(e) {
+				var target = e.target;
+				var type = e.type;
+				//Checks if event target has tagname of P. If event is a mouseover, paragraph’s CSS underlines class. If event type is mouseout, element’s className property is cleared, which returns text to original style. This style‐changing code runs only if element that caused event is a paragraph element
+				if (target.tagName == "P") {
+					if (type == "mouseover") {
+						target.className = "underline";
+					} else if (type == "mouseout") {
+						target.className = "";
+					}
+				}
+				//function determines if user clicked his mouse by again checking type variable. If user clicked somewhere in page, alert displays contents coordinates of MouseEvent object. MouseEvent object supplied to this function is overwritten and re‐created every time you generate an event, so the next time you click the mouse or move the pointer, new MouseEvent object created that contains coordinates.
+				if (type == "click") {
+					alert("You clicked the mouse button at the X:" + e.clientX + " and Y:" + e.clientY + " coordinates");
+				}
+			}
+			document.addEventListener("mouseover", handleEvent);
+			document.addEventListener("mouseout", handleEvent);
+			document.addEventListener("click", handleEvent);
+	</script>
+	</body>
+</html>
