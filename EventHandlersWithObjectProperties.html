@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="description" content="">
+	<title>Handling Events via Object Properties</title>
+</head>
+<body>
+	<a id="homepage" href="http://annamcdevitt.com/">
+		Click Here
+	</a>
+	<script>
+		function linkClick() {
+			alert("This link will go to Anna McDevitt's homepage");
+			return true;
+		}
+		//connection made between object's event and function: onclick property makes connection between object's event handler and function
+		//getElementById finds element with id and returns the "a" object
+		//notice there are no () after function name, bc you are NOT executing linkClick, only assigning linkClick function object to element's onclick property
+		//browser executes function. event triggers >> event handler executes >> browser automatically passes and Event object to handler
+		document.getElementById("homepage").onclick = linkClick;
+	</script>
+</body>
+</html>
